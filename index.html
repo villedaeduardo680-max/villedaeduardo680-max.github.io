@@ -1,0 +1,249 @@
+<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Página Empresarial | Inicio</title> <style> /* Inicia la sección de hojas de estilo (CSS) para controlar el diseño y apariencia */
+        
+        /* ==========================================================================
+           ZONA DE PERSONALIZACIÓN (Cambia estos valores para modificar toda la web)
+           ========================================================================== */
+        :root { /* Contenedor global para definir variables de diseño reutilizables */
+            --color-primario: #1e3a8a;       /* Color de la identidad corporativa (Azul oscuro) */
+            --color-secundario: #0284c7;     /* Color para botones, enlaces y detalles (Azul claro) */
+            --color-oscuro: #1f2937;         /* Color para los textos principales y fondos oscuros */
+            --color-claro: #f3f4f6;          /* Color gris claro para fondos de secciones */
+            --color-blanco: #ffffff;         /* Color blanco puro para tarjetas y fondo general */
+            
+            --fuente-titulos: 'Helvetica Neue', Arial, sans-serif; /* Tipografía para los encabezados */
+            --fuente-cuerpo: 'Segoe UI', Roboto, sans-serif;       /* Tipografía para los textos de párrafo */
+            
+            --tamano-gran-titulo: 40px;      /* Tamaño de letra para el título principal (Hero) */
+            --tamano-subtitulo: 28px;        /* Tamaño de letra para los títulos de secciones */
+            --tamano-texto: 16px;            /* Tamaño de letra estándar para los párrafos */
+        }
+
+        /* ==========================================================================
+           ESTILOS GENERALES Y ESTRUCTURA
+           ========================================================================== */
+        * { /* Selector universal: aplica a todos los elementos de la página */
+            box-sizing: border-box; /* Asegura que los tamaños incluyan los bordes y rellenos sin desconfigurarse */
+            margin: 0; /* Elimina los márgenes que los navegadores agregan por defecto */
+            padding: 0; /* Elimina los rellenos/espaciados internos por defecto */
+        }
+
+        body { /* Estilos para el cuerpo completo de la página */
+            font-family: var(--fuente-cuerpo); /* Aplica la tipografía configurada para el cuerpo */
+            font-size: var(--tamano-texto); /* Aplica el tamaño de letra base */
+            color: var(--color-oscuro); /* Asigna el color de texto por defecto */
+            background-color: var(--color-blanco); /* Define el fondo general de la página */
+            line-height: 1.6; /* Controla el interlineado para mejorar la legibilidad del texto */
+        }
+
+        /* Estilos del Encabezado (Navegación) */
+        header { /* Contenedor de la barra de navegación superior */
+            background-color: var(--color-blanco); /* Fondo blanco para el menú */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Agrega una sombra sutil abajo para dar profundidad */
+            position: sticky; /* Hace que el menú se quede fijo arriba al hacer scroll */
+            top: 0; /* Alinea el menú fijo exactamente en el tope de la pantalla */
+            z-index: 1000; /* Asegura que el menú siempre se superponga a otros elementos */
+        }
+
+        .nav-container { /* Contenedor interno del menú para limitar su ancho */
+            max-width: 1200px; /* Ancho máximo de la barra de navegación */
+            margin: 0 auto; /* Centra el contenedor horizontalmente en la pantalla */
+            display: flex; /* Activa Flexbox para alinear elementos en filas o columnas */
+            justify-content: space-between; /* Separa el logo a la izquierda y el menú a la derecha */
+            align-items: center; /* Centra verticalmente el logo y los enlaces */
+            padding: 20px; /* Espacio interno alrededor del menú */
+        }
+
+        .logo { /* Estilos para el nombre o logotipo de la empresa */
+            font-family: var(--fuente-titulos); /* Aplica la tipografía de títulos al logo */
+            font-size: 24px; /* Tamaño de fuente específico para el logotipo */
+            font-weight: bold; /* Aplica estilo de letra negrita */
+            color: var(--color-primario); /* Color de la identidad principal */
+            text-decoration: none; /* Quita el subrayado automático de los enlaces */
+        }
+
+        .nav-links { /* Contenedor de los enlaces del menú */
+            display: flex; /* Alinea los enlaces uno al lado del otro en una fila */
+            list-style: none; /* Elimina los puntos/viñetas de la lista */
+        }
+
+        .nav-links li { /* Estilos individuales para cada ítem de la lista */
+            margin-left: 20px; /* Separa los botones del menú entre sí hacia la izquierda */
+        }
+
+        .nav-links a { /* Estilos para el texto de los enlaces de navegación */
+            color: var(--color-oscuro); /* Color oscuro para que sea legible */
+            text-decoration: none; /* Elimina el subrayado del texto */
+            font-weight: 500; /* Grosor de letra medio */
+            transition: color 0.3s ease; /* Suaviza el cambio de color al pasar el mouse */
+        }
+
+        .nav-links a:hover { /* Efecto cuando el usuario pasa el cursor sobre un enlace */
+            color: var(--color-secundario); /* Cambia al color secundario */
+        }
+
+        /* Sección Principal (Hero Section) */
+        .hero { /* Sección de impacto inicial de la página */
+            max-width: 1200px; /* Limita el ancho horizontal */
+            margin: 0 auto; /* Centra la sección en pantallas anchas */
+            padding: 80px 20px; /* Espaciado arriba/abajo y a los lados */
+            display: flex; /* Activa Flexbox para dividir la pantalla en dos columnas */
+            align-items: center; /* Centra verticalmente el contenido de ambas columnas */
+            gap: 40px; /* Espacio de separación entre el texto y la imagen */
+        }
+
+        .hero-content { /* Columna que guarda los textos del Hero */
+            flex: 1; /* Ocupa el 50% del espacio disponible de manera proporcional */
+        }
+
+        .hero-content h1 { /* Título gigante de la empresa */
+            font-family: var(--fuente-titulos); /* Usa la fuente de títulos configurada */
+            font-size: var(--tamano-gran-titulo); /* Tamaño de letra gigante */
+            color: var(--color-primario); /* Color corporativo */
+            margin-bottom: 20px; /* Desplaza el párrafo hacia abajo */
+        }
+
+        .hero-content p { /* Subtexto descriptivo del Hero */
+            margin-bottom: 30px; /* Desplaza el botón de acción hacia abajo */
+            color: #555; /* Color gris intermedio para el texto */
+        }
+
+        .btn-principal { /* Estilos para el botón de llamada a la acción */
+            display: inline-block; /* Permite aplicar márgenes y rellenos correctamente */
+            background-color: var(--color-secundario); /* Fondo con el color secundario vibrante */
+            color: var(--color-blanco); /* Texto en color blanco */
+            padding: 12px 28px; /* Tamaño del botón (arriba/abajo, lados) */
+            text-decoration: none; /* Quita el subrayado */
+            border-radius: 5px; /* Redondea ligeramente las esquinas del botón */
+            font-weight: bold; /* Letra en negrita */
+            transition: background 0.3s; /* Suaviza la transición de color en el hover */
+        }
+
+        .btn-principal:hover { /* Efecto sobre el botón principal */
+            background-color: var(--color-primario); /* Cambia a un color más oscuro al interactuar */
+        }
+
+        .hero-image-container { /* Columna que guarda el contenedor de la imagen */
+            flex: 1; /* Ocupa el otro 50% del espacio disponible */
+        }
+
+        /* Marcadores de posición para Imágenes (Placeholders) */
+        .image-placeholder { /* Estilos para los recuadros donde irán tus imágenes reales */
+            //background-color: #e5e7eb; /* Fondo gris que simula la ausencia de imagen */
+            //border: 2px dashed #9ca3af; /* Borde punteado para indicar zona de diseño */
+            border-radius: 8px; /* Bordes redondeados */
+            display: flex; /* Activa flexbox para centrar el texto dentro del recuadro */
+            justify-content: center; /* Centra el texto horizontalmente */
+            align-items: center; /* Centra el texto verticalmente */
+            color: #6b7280; /* Color gris oscuro para el texto del aviso */
+            font-weight: bold; /* Texto en negrita */
+            min-height: 500px; /* Altura mínima asegurada para este bloque */
+            width: 100%; /* Ocupa todo el ancho de su columna */
+        }
+
+        /* Sección de Servicios / Características */
+        .servicios { /* Sección intermedia con fondo de color contrastante */
+            background-color: var(--color-claro); /* Usa el fondo gris claro definido arriba */
+            padding: 80px 20px; /* Margen interno para separar del contenido exterior */
+        }
+
+        .servicios-container { /* Contenedor centrado para los servicios */
+            max-width: 1200px; /* Ancho máximo de la cuadrícula */
+            margin: 0 auto; /* Centra el bloque entero */
+        }
+
+        .seccion-titulo { /* Estilo para los títulos de cada sección */
+            font-family: var(--fuente-titulos); /* Tipografía corporativa */
+            font-size: var(--tamano-subtitulo); /* Tamaño mediano */
+            text-align: center; /* Centra el texto en el medio de la pantalla */
+            color: var(--color-oscuro); /* Color de texto oscuro */
+            margin-bottom: 50px; /* Espacio libre debajo del título */
+        }
+
+        .servicios-grid { /* Cuadrícula adaptativa para las tarjetas de servicios */
+            display: grid; /* Activa el modo Grid Layout de CSS */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea columnas automáticas según el espacio */
+            gap: 30px; /* Distancia de separación entre tarjetas */
+        }
+
+        .tarjeta-servicio { /* Estilos para cada bloque individual de servicio */
+            background-color: var(--color-blanco); /* Fondo blanco para resaltar sobre el gris */
+            padding: 30px; /* Espacio de amortiguación interno */
+            border-radius: 8px; /* Esquinas redondeadas */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra muy suave para dar elegancia */
+        }
+
+        .tarjeta-servicio .img-mini-placeholder { /* Espacio para imagen miniatura dentro de los servicios */
+            height: 150px; /* Altura de la imagen del servicio */
+            background-color: #e5e7eb; /* Fondo gris intermedio */
+            border-radius: 4px; /* Esquinas suavemente redondeadas */
+            margin-bottom: 20px; /* Separa la imagen del título del servicio */
+            display: flex; /* Activa flexbox para centrar el texto de ayuda */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            color: #9ca3af; /* Color de texto suave */
+        }
+
+        .tarjeta-servicio h3 { /* Título del servicio */
+            margin-bottom: 15px; /* Espacio inferior */
+            color: var(--color-primario); /* Color de la identidad principal */
+        }
+
+        /* Pie de Página (Footer) */
+        footer { /* Contenedor del cierre de la web */
+            background-color: var(--color-oscuro); /* Fondo oscuro empresarial */
+            color: var(--color-blanco); /* Texto en blanco para alto contraste */
+            text-align: center; /* Centra todos los textos informativos */
+            padding: 40px 20px; /* Espaciado superior e inferior */
+            font-size: 14px; /* Tamaño de letra ligeramente más chico */
+        }
+
+        /* Diseño Responsivo (Ajustes para Pantallas Chicas/Celulares) */
+        @media (max-width: 768px) { /* Se activa solo si la pantalla mide menos de 768px de ancho */
+            .hero { /* Modifica el área de impacto */
+                flex-direction: column; /* Cambia la fila a una sola columna (vertical) */
+                text-align: center; /* Centra el texto en móviles */
+                padding: 40px 20px; /* Reduce el espaciado para pantallas pequeñas */
+            }
+            .nav-container { /* Modifica el menú de navegación */
+                flex-direction: column; /* El logo se coloca arriba y los enlaces abajo */
+                gap: 15px; /* Añade separación entre el logo y los enlaces */
+            }
+            .nav-links li { /* Modifica los enlaces */
+                margin: 0 10px; /* Equilibra los espacios a los lados */
+            }
+        }
+    </style> </head> <body> <header> 
+        <div class="nav-container"> <a href="#" class="logo">Computation Solutions Corp.</a> <ul class="nav-links"> <li><a href="#inicio">Inicio</a></li> <li><a href="#servicios">Servicios</a></li> <li><a href="#contacto">Contacto</a></li> </ul> 
+        </div> 
+    </header>
+
+    <section id="inicio" class="hero"> 
+        <div class="hero-content"> <h1>Computation Solutions Corp.</h1> <p>Soluciones para el progreso humano.</p> <a href="#contacto" class="btn-principal">Saber Más</a> </div> 
+        <div class="hero-image-container"> <div class="image-placeholder">
+                <img src="LOGO Empresa.PNG">
+            </div>
+        </div> 
+    </section>
+
+    <section id="servicios" class="servicios"> 
+        <div class="servicios-container"> 
+            <h2 class="seccion-titulo">Nuestros Servicios</h2> <div class="servicios-grid"> <div class="tarjeta-servicio"> 
+                    <div class="img-mini-placeholder">Imagen Servicio 1</div>
+                    <h3>Consultoría IT</h3> <p>Análisis a fondo y diagnóstico completo de arquitecturas de software y optimización lógica de sistemas.</p> </div>
+
+                <div class="tarjeta-servicio"> 
+                    <div class="img-mini-placeholder">Imagen Servicio 2</div>
+                    <h3>Desarrollo a la Medida</h3> <p>Construcción de herramientas robustas utilizando los estándares y lenguajes más eficientes del mercado.</p> </div>
+
+                <div class="tarjeta-servicio"> 
+                    <div class="img-mini-placeholder">Imagen Servicio 3</div>
+                    <h3>Soporte Preventivo</h3> <p>Monitoreo continuo y planes de mantenimiento preventivo y correctivo para evitar caídas críticas en producción.</p> </div>
+
+            </div> 
+        </div> 
+    </section>
+
+    <footer id="contacto"> 
+        <p>&copy; 2026 EmpresaCorp. Todos los derechos reservados.</p> <p>Contacto: info@empresacorp.com | Ciudad de México</p> </footer>
+
+</body> </html> ```
